@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: teletiger
+    runtime: python
+    repo: https://github.com/YourUsername/TeleTiger
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd backend && uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
